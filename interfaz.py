@@ -107,7 +107,7 @@ class Ventana(tk.Tk):
         self.filemenu.add_separator()
         self.menu.add_command(label="Analizar", command=self.analizar_texto)
         self.menu.add_command(label="Ver reporte")
-        self.menu.add_command(label="Ver errores")
+        self.menu.add_command(label="Ver errores", command=self.devolver_errores)
     def open_file(self):
         global datos_Json
         filepath = askopenfilename(
@@ -148,6 +148,10 @@ class Ventana(tk.Tk):
         print("Analizando...")
         text = self.scroll.get(1.0, tk.END) 
         arbol = analizar(text)
+    def devolver_errores(self):
+        file = open("errores.JSON","w+")
+        file.write(json.dumps(analizar.devolver_errores()))
+        file.close()
 
 
 app = Ventana()

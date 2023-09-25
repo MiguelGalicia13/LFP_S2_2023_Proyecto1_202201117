@@ -10,6 +10,7 @@ line = 1
 col = 1
 
 tokens = []
+errores = []
 
 
 configuracion = {
@@ -150,3 +151,8 @@ def analizar(entrada):
     instrucciones = create_instructions()
     for i in instrucciones:
         print("RESULTADO INSTRUCCION: ", i.interpretar())
+
+def errores():
+    global errores
+    
+    return Expresion_Arimetica.devolver_errores()

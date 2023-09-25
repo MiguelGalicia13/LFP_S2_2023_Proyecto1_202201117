@@ -1,6 +1,7 @@
 from Expresiones.expresion import *
 import math
 class Expresion_Arimetica(Expresion):
+    errores ={}
     def __init__ (self,tipo,valor1,valor2,linea,columna):
         self.tipo=tipo
         self.valor1=valor1
@@ -8,6 +9,7 @@ class Expresion_Arimetica(Expresion):
         self.linea=linea
         self.columna=columna
     def interpretar(self):
+        global errores
         valor1=self.valor1
         valor2=self.valor2
         if isinstance(valor1,Expresion):
@@ -34,7 +36,8 @@ class Expresion_Arimetica(Expresion):
             resultado = valor1 * valor2
         elif self.tipo == "division":
             if valor2==0:
-                return "Error: division entre 0"
+                errores["Division entre 0"]= "Error en linea: "+str(self.linea)+" columna: "+str(self.columna)
+                return 
             resultado = valor1 / valor2
         elif self.tipo == "potencia":
             resultado = math.pow(valor1, valor2)
@@ -53,3 +56,6 @@ class Expresion_Arimetica(Expresion):
             + " valor2: "
             + str(self.valor2)
         )
+    def devolver_errores(self):
+        
+        return self.errores
