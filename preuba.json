@@ -1,0 +1,51 @@
+{
+    "operaciones":[
+        {
+            "operacion":"suma",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"resta",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"multiplicacion",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"division",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"potencia",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"raiz",
+            "valor1": 5,
+            "valor2": 6
+        },
+        {
+            "operacion":"seno",
+            "valor1": 90
+        },
+        {
+            "operacion":"coseno",
+            "valor1": 0
+        }
+        
+    ],
+    "configuraciones": [
+        {
+            "texto": "realizacion de operaciones",
+            "fondo": "green",
+            "fuente": "black",
+            "forma": "circle"
+        }
+    ]
+}

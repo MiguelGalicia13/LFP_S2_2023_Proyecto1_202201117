@@ -137,7 +137,7 @@ def get_instruccion():
         if operacion and operacion in ["seno"] and value1:
             return ExpresionTrigonometrica(operacion, value1, 0, 0)
     return None
-entrada = open("C:\LABS\LFP\LFP_S2_2023_Proyecto1_202201117\prueba.json", "r").read()
+#entrada = open("C:\LABS\LFP\LFP_S2_2023_Proyecto1_202201117\prueba.json", "r").read()
 def create_instructions():
     global tokens
     instrucciones = []

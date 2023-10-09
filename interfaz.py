@@ -68,7 +68,6 @@ class TextLineNumbers(tk.Canvas):
     def redraw(self, *args):
         """redraw line numbers"""
         self.delete("all")
-
         i = self.textwidget.index("@0,0")
         while True:
             dline = self.textwidget.dlineinfo(i)
@@ -120,7 +119,6 @@ class Ventana(tk.Tk):
         with open(filepath, "r") as input_file:
             text = input_file.read()
             self.scroll.insert(tk.END, text)
-            datos_Json = json.loads(text)
         self.title(f"Proyecto 1 - {filepath}")
     def save_file(self):
         global datos_Json
@@ -139,12 +137,7 @@ class Ventana(tk.Tk):
             text = self.scroll.get(1.0, tk.END)
             output_file.write(text)
         self.title(f"Proyecto 1 - {filepath}")
-
     def analizar_texto(self):
-        global datos_Json
-        if datos_Json == None:
-            tk.messagebox.showerror(title="Error", message="No se ha cargado el archivo")
-            return
         print("Analizando...")
         text = self.scroll.get(1.0, tk.END) 
         arbol = analizar(text)
